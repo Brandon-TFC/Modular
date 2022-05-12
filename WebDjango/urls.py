@@ -22,6 +22,7 @@ from django.urls import include
 from products.views import ProductListView
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('', ProductListView.as_view(), name='index'),
     path('usuarios/login/', views.login, name='login'),
