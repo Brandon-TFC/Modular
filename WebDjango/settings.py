@@ -27,8 +27,6 @@ SECRET_KEY = 'django-insecure-9z%&x9*3=myguy=n%3_40k*t9iws69&orjb0bghri-9ut5&rxf
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-SOCIAL_AUTH_FACEBOOK_KEY = "414985933583555"
-SOCIAL_AUTH_FACEBOOK_SECRET = "81a2767430f6482845decdf6e6c10d69"
 STRIPE_PUBLIC_KEY = "pk_test_51JtvQ0K5DDiUrkpu9nZjygrdC9NML5uqCVPY2CfqqglcGChLcnKyeRDYJVfNYtlrAIzK2XUmdz9yQ0KAeX3VP4im002QhSRHPX"
 STRIPE_SECRET_KEY = "sk_test_51JtvQ0K5DDiUrkpubYc0ViXKp2kxzTkNSWGC8ocRC0oXmlwFhlz65tXz0eFSOJIfCq5IxlxlPGLiOWq0eKZfRx5s00cJum7cOz"
 
@@ -92,8 +90,12 @@ WSGI_APPLICATION = 'WebDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycog2',
+        'NAME': 'dk20k6iufdudg',
+        'HOST': 'ec2-34-236-94-53.compute-1.amazonaws.com',
+        'USER': 'lsoqnzuumjljwz',
+        'PASSWORD': '48ea26c0ac040aaa109164e7f84ca82894207f4a9bc097e2f8c238d91812e6ad',
+        'PORT': 5432
     }
 }
 
