@@ -24,3 +24,7 @@ stripe==3.0.0
 tzdata==2022.1
 urllib3==1.26.9
 whitenoise==6.1.0
+engineering-notation==0.6.0
+python-decouple==3.6
+tk==0.1.0
+tk-tools==0.15.0

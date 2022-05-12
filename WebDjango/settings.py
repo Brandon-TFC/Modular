@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9z%&x9*3=myguy=n%3_40k*t9iws69&orjb0bghri-9ut5&rxf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['storeblackcat.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     
 ]
 
@@ -87,15 +88,23 @@ WSGI_APPLICATION = 'WebDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycog2',
+#        'NAME': 'dk20k6iufdudg',
+#        'HOST': 'ec2-34-236-94-53.compute-1.amazonaws.com',
+#        'USER': 'lsoqnzuumjljwz',
+#        'PASSWORD': '48ea26c0ac040aaa109164e7f84ca82894207f4a9bc097e2f8c238d91812e6ad',
+#        'PORT': 5432
+#    }
+#}
+import dj_database_url
+from decouple import config
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycog2',
-        'NAME': 'dk20k6iufdudg',
-        'HOST': 'ec2-34-236-94-53.compute-1.amazonaws.com',
-        'USER': 'lsoqnzuumjljwz',
-        'PASSWORD': '48ea26c0ac040aaa109164e7f84ca82894207f4a9bc097e2f8c238d91812e6ad',
-        'PORT': 5432
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 
@@ -136,8 +145,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+#STATIC_URL = '/static/'
+## DJango buscara en esta ruta, los archivos estaticos que necesite
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'),
+#)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-# DJango buscara en esta ruta, los archivos estaticos que necesite
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -154,3 +170,4 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
