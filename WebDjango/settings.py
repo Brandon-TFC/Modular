@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9z%&x9*3=myguy=n%3_40k*t9iws69&orjb0bghri-9ut5&rxf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 SOCIAL_AUTH_FACEBOOK_KEY = "414985933583555"
 SOCIAL_AUTH_FACEBOOK_SECRET = "81a2767430f6482845decdf6e6c10d69"
 STRIPE_PUBLIC_KEY = "pk_test_51JtvQ0K5DDiUrkpu9nZjygrdC9NML5uqCVPY2CfqqglcGChLcnKyeRDYJVfNYtlrAIzK2XUmdz9yQ0KAeX3VP4im002QhSRHPX"
