@@ -24,8 +24,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('HOME',  name='storeblackcat'),
-    path('/', ProductListView.as_view(), name='index'),
+    path('home/', ProductListView.as_view(), name='index'),
     path('usuarios/login/', views.login, name='login'),
     path('usuarios/registro/', views.registro, name='registro'),
     path('usuarios/logout/', views.salir, name='salir'),
