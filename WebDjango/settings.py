@@ -26,9 +26,8 @@ SECRET_KEY = 'django-insecure-9z%&x9*3=myguy=n%3_40k*t9iws69&orjb0bghri-9ut5&rxf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-STRIPE_PUBLIC_KEY = "pk_test_51JtvQ0K5DDiUrkpu9nZjygrdC9NML5uqCVPY2CfqqglcGChLcnKyeRDYJVfNYtlrAIzK2XUmdz9yQ0KAeX3VP4im002QhSRHPX"
-STRIPE_SECRET_KEY = "sk_test_51JtvQ0K5DDiUrkpubYc0ViXKp2kxzTkNSWGC8ocRC0oXmlwFhlz65tXz0eFSOJIfCq5IxlxlPGLiOWq0eKZfRx5s00cJum7cOz"
+ALLOWED_HOSTS = ['https://storeblackcat.herokuapp.com/']
+
 
 # Application definition
 
