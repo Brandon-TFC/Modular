@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import django_heroku
-django_heroku.settings(locals())
+
 from pathlib import Path
 import os
 
@@ -89,24 +88,17 @@ WSGI_APPLICATION = 'WebDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycog2',
-#        'NAME': 'dk20k6iufdudg',
-#        'HOST': 'ec2-34-236-94-53.compute-1.amazonaws.com',
-#        'USER': 'lsoqnzuumjljwz',
-#        'PASSWORD': '48ea26c0ac040aaa109164e7f84ca82894207f4a9bc097e2f8c238d91812e6ad',
-#        'PORT': 5432
-#    }
-#}
-import dj_database_url
-from decouple import config
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycog2',
+        'NAME': 'd4a6dsvcf9g3sl',
+        'HOST': 'ec2-3-224-164-189.compute-1.amazonaws.com',
+        'USER': 'txowceboshoguz',
+        'PASSWORD': '05a06792bfd3a6e0ca0d39d815f565f831e2bd86be9b4c8df632d9d36368b9f2d',
+        'PORT': 5432
+    }
 }
+
 
 
 # Password validation
