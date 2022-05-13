@@ -26,10 +26,7 @@ SECRET_KEY = 'django-insecure-9z%&x9*3=myguy=n%3_40k*t9iws69&orjb0bghri-9ut5&rxf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
-STRIPE_PUBLIC_KEY = "pk_test_51JtvQ0K5DDiUrkpu9nZjygrdC9NML5uqCVPY2CfqqglcGChLcnKyeRDYJVfNYtlrAIzK2XUmdz9yQ0KAeX3VP4im002QhSRHPX"
-STRIPE_SECRET_KEY = "sk_test_51JtvQ0K5DDiUrkpubYc0ViXKp2kxzTkNSWGC8ocRC0oXmlwFhlz65tXz0eFSOJIfCq5IxlxlPGLiOWq0eKZfRx5s00cJum7cOz"
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -93,8 +90,12 @@ WSGI_APPLICATION = 'WebDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd4a6dsvcf9g3sl',
+        'HOST': 'ec2-3-224-164-189.compute-1.amazonaws.com',
+        'USER': 'txowceboshoguz',
+        'PASSWORD': '05a06792bfd3a6e0ca0d39d815f565f831e2bd86be9b4c8df632d9d36368b9f2d',
+        'PORT': 5432
     }
 }
 
