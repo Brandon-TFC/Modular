@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'WebDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycog2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd4a6dsvcf9g3sl',
         'HOST': 'ec2-3-224-164-189.compute-1.amazonaws.com',
         'USER': 'txowceboshoguz',
