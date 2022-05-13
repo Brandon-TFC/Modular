@@ -22,9 +22,8 @@ from django.urls import include
 from products.views import ProductListView
 from django.conf.urls.static import static
 
-
 urlpatterns = [
-    path('storeblackcat.herokuapp.com', ProductListView.as_view(), name='index'),
+    path('', ProductListView.as_view(), name='index'),
     path('usuarios/login/', views.login, name='login'),
     path('usuarios/registro/', views.registro, name='registro'),
     path('usuarios/logout/', views.salir, name='salir'),
@@ -36,7 +35,7 @@ urlpatterns = [
     path('direcciones/', include('DirEnvio.urls')),
     path('codigopromo/', include('promo_codigo.urls')),
     path('pagos/', include('MetodoPago.urls')),
-] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
