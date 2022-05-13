@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9z%&x9*3=myguy=n%3_40k*t9iws69&orjb0bghri-9ut5&rxf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -94,7 +94,7 @@ DATABASES = {
         'NAME': 'd4a6dsvcf9g3sl',
         'HOST': 'ec2-3-224-164-189.compute-1.amazonaws.com',
         'USER': 'txowceboshoguz',
-        'PASSWORD': '05a06792bfd3a6e0ca0d39d815f565f831e2bd86be9b4c8df632d9d36368b9f2d',
+        'PASSWORD': '05a06792bfd3a6e0ca0d39d815f565f831e2bd86be9b4c8df632d9d36368b9f2',
         'PORT': 5432
     }
 }
@@ -138,18 +138,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-# DJango buscara en esta ruta, los archivos estaticos que necesite
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATIC_URL = '/static/'
-#
+## DJango buscara en esta ruta, los archivos estaticos que necesite
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
 #)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
