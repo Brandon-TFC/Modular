@@ -1,1 +1,1 @@
-web: gunicorn WebDjango.wsgi --log-file -
+web: waitress-server WebDjango.wsgi:application
