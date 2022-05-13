@@ -1,1 +1,2 @@
-web: waitress-server WebDjango.wsgi:application
+
+web: waitress-serve WebDjango.wsgi
